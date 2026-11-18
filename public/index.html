@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mini Chat</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Mini Chat</h1>
+      <span id="status" class="pill">locked</span>
+    </header>
+
+    <form id="unlock">
+      <label for="pass">Passphrase</label>
+      <div class="row">
+        <input id="pass" type="password" autocomplete="current-password" placeholder="Same as CHAT_PASSPHRASE on the server" required />
+        <button type="submit">Unlock</button>
+      </div>
+      <p class="hint">Your key is derived in the browser and never sent anywhere.</p>
+    </form>
+
+    <section id="chat" hidden>
+      <ol id="log" aria-live="polite"></ol>
+      <form id="composer" class="row">
+        <input id="msg" autocomplete="off" placeholder="Message the model…" required />
+        <button type="submit">Send</button>
+      </form>
+      <details id="wire">
+        <summary>What went over the wire</summary>
+        <p class="hint">Sent (encrypted):</p>
+        <pre id="wire-out">—</pre>
+        <p class="hint">Received (encrypted):</p>
+        <pre id="wire-in">—</pre>
+      </details>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

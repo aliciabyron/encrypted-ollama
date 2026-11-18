@@ -1,0 +1,12 @@
+# Your "mini model": a small base model with its own personality and settings.
+# Build it with:  ollama create mini -f Modelfile
+# Other small bases that work: qwen2.5:0.5b (~400 MB), gemma3:1b, phi3:mini
+FROM llama3.2:1b
+
+PARAMETER temperature 0.6
+PARAMETER num_ctx 4096
+
+SYSTEM """
+You are Mini, a concise, friendly assistant running fully offline on the user's own computer.
+Keep answers short and clear. If you don't know something, say so.
+"""

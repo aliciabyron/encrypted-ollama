@@ -1,0 +1,15 @@
+{
+  "name": "encrypted-ollama-chat",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Chat UI for a local Ollama mini model with end-to-end AES-256-GCM encryption between the browser and the gateway.",
+  "scripts": {
+    "start": "node server.js",
+    "mock": "node scripts/mock-ollama.js",
+    "test": "node tests/e2e.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.48.0"
+  },
+  "engines": { "node": ">=18" }
+}
